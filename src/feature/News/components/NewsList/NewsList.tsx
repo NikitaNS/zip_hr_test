@@ -48,6 +48,7 @@ const NewsList = () => {
           renderItem={renderItem}
           showsVerticalScrollIndicator={false}
           ListEmptyComponent={ListEmptyComponent}
+          keyExtractor={item => item.title}
         />
       )}
     </View>

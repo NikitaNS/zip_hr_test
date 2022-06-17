@@ -32,8 +32,10 @@ const NewsItem: FC<INewsItem> = ({
           {title}
         </Text>
         <View>
-          <Text style={styles.newsItemContentAuthor}>By: {byline}</Text>
-          <Text style={styles.newsItemContentDate}>
+          <Text ellipsizeMode={'tail'} style={styles.newsItemContentAuthor}>
+            By: {byline}
+          </Text>
+          <Text ellipsizeMode={'tail'} style={styles.newsItemContentDate}>
             Published: {getPublishedPeriod()}
           </Text>
         </View>

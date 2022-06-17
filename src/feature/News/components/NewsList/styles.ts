@@ -7,5 +7,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 20,
     backgroundColor: colors.darkTurquoise,
+    zIndex: 0,
+    elevation: 0,
   },
 });

@@ -32,7 +32,11 @@ const Dropdown: FC<IDropdown> = ({
   const renderDropdown = () => {
     return (
       <TouchableOpacity onPress={onDropdownPressHandler} style={styles.overlay}>
-        <FlatList data={items} renderItem={renderItem} />
+        <FlatList
+          data={items}
+          renderItem={renderItem}
+          contentContainerStyle={{paddingBottom: 30}}
+        />
       </TouchableOpacity>
     );
   };

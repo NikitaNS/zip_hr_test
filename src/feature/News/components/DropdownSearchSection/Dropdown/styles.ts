@@ -7,6 +7,8 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: 5,
     paddingHorizontal: 20,
+    zIndex: 100,
+    elevation: 100,
   },
   dropdownButton: {
     flexDirection: 'row',
@@ -31,10 +33,12 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     position: 'absolute',
     top: 40,
-    zIndex: 1,
+    zIndex: 101,
+    elevation: 101,
     width: Dimensions.get('window').width / 2 - 30,
     borderBottomEndRadius: 5,
     borderBottomStartRadius: 5,
+    overflow: 'hidden',
   },
   locationItem: {
     width: Dimensions.get('window').width / 2 - 30,
@@ -42,9 +46,13 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 10,
     backgroundColor: colors.ghostWhite,
+    zIndex: 100,
+    elevation: 100,
   },
   modifiedDropdownButton: {
     borderBottomEndRadius: 0,
     borderBottomStartRadius: 0,
+    zIndex: 100,
+    elevation: 100,
   },
 });

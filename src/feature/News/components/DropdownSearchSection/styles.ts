@@ -12,5 +12,6 @@ export const styles = StyleSheet.create({
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
     zIndex: 1,
+    elevation: 1,
   },
 });

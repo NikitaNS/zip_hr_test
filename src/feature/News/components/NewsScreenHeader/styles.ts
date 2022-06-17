@@ -4,7 +4,8 @@ import {colors} from '../../constans';
 export const styles = StyleSheet.create({
   rootContainer: {
     backgroundColor: colors.gainsboro,
-    zIndex: 1,
+    zIndex: 100,
+    elevation: 100,
   },
 
   itemContainer: {

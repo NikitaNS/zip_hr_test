@@ -5,15 +5,10 @@ import React, {
   SetStateAction,
   useCallback,
   useEffect,
-  useRef,
   useState,
 } from 'react';
 import {fetchNews} from '../api/api';
 import AsyncStorage from '@react-native-community/async-storage';
-import {AppState} from 'react-native';
-import Reactotron from 'reactotron-react-native';
-import {getPersistData, persisttData} from '../../../utils';
-import {useNetInfo} from '@react-native-community/netinfo';
 
 const defaultValue = {
   news: [],
@@ -36,11 +31,6 @@ const NewsContextProvider: FC = ({children}) => {
   const [selectedLocation, setSelectedLocation] = useState<string>('');
   const [newsType, setNewsType] = useState<string>('home');
   const [loading, setLoading] = useState<boolean>(false);
-
-  const netInfo = useNetInfo();
-
-  const appState = useRef(AppState.currentState);
-  const [appStateVisible, setAppStateVisible] = useState(appState.current);
 
   const getNews = useCallback(async () => {
     setLoading(true);
@@ -81,10 +71,7 @@ const NewsContextProvider: FC = ({children}) => {
   }, [news]);
 
   useEffect(() => {
-    console.log(1111, netInfo.isConnected);
     getNews().then(res => {
-      Reactotron.log(res);
-
       setNews(res);
     });
   }, [newsType]);

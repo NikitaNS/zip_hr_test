@@ -1,33 +1,37 @@
 import React, {FC, memo} from 'react';
-import {FlatList, ScrollView, View, Text} from 'react-native';
+import {FlatList, ScrollView, StyleProp, ViewStyle} from 'react-native';
 import {newsTypes} from '../../constans';
-import {styles} from './styles';
-import NewsHeaderItem from '../NewsHeaderItem';
+import {NewsScreenHeaderView, NewsHeaderTitle} from './styles';
+import NewsSectionsItem from '../NewsSectionsItem/NewsSectionsItem';
 import DropdownSearchSection from '../DropdownSearchSection/DropdownSearchSection';
+
+const flatListContentContainerStyle: StyleProp<ViewStyle> = {
+  alignSelf: 'flex-start',
+  justifyContent: 'space-between',
+};
+
+const numColumns = Math.ceil(newsTypes.length / 2)
 
 const NewsScreenHeader: FC = () => {
   const renderItem = ({item}: {item: string}) => {
-    return <NewsHeaderItem itemName={item} />;
+    return <NewsSectionsItem itemName={item} />;
   };
 
   return (
-    <View style={styles.rootContainer}>
-      <Text style={styles.newsHeaderTitle}>Section</Text>
+    <NewsScreenHeaderView>
+      <NewsHeaderTitle>Section</NewsHeaderTitle>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <FlatList
           data={newsTypes}
           renderItem={renderItem}
-          numColumns={Math.ceil(newsTypes.length / 2)}
-          contentContainerStyle={{
-            alignSelf: 'flex-start',
-            justifyContent: 'space-between',
-          }}
+          numColumns={numColumns}
+          contentContainerStyle={flatListContentContainerStyle}
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
         />
       </ScrollView>
       <DropdownSearchSection />
-    </View>
+    </NewsScreenHeaderView>
   );
 };
 

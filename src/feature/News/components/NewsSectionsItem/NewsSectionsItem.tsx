@@ -1,10 +1,10 @@
 import React, {FC, useContext} from 'react';
 import {Text, TouchableOpacity} from 'react-native';
-import {styles} from './NewsScreenHeader/styles';
-import {NewsContext} from '../context/NewsContext';
+import {NewsContext} from '../../context/NewsContext';
 import AsyncStorage from '@react-native-community/async-storage';
+import {styles} from "./styles";
 
-const NewsHeaderItem: FC<INewsHeaderItem> = ({itemName}) => {
+const NewsSectionsItem: FC<INewsHeaderItem> = ({itemName}) => {
   const {setNewsType, newsType} = useContext(NewsContext);
 
   const onPressHandler = async () => {
@@ -30,4 +30,4 @@ interface INewsHeaderItem {
   itemName: string;
 }
 
-export default NewsHeaderItem;
+export default NewsSectionsItem;

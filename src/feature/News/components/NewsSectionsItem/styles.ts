@@ -16,4 +16,24 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     backgroundColor: colors.white,
   },
+
+  selectedNewTypeItem: {
+    borderColor: colors.deepSkyBlue,
+  },
+  selectedNewTypeItemTitle: {
+    color: colors.deepSkyBlue,
+  },
+
+  itemContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+    marginHorizontal: 10,
+    width: 150,
+    height: 40,
+    borderColor: colors.gray,
+    borderRadius: 12,
+    borderWidth: 2,
+    backgroundColor: colors.white,
+  },
 });

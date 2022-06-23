@@ -7,7 +7,7 @@
     - Setup for iOS and Android
 - Clone this repo `git clone git@github.com:NikitaNS/zip_hr_test.git` then `cd test`
 - Install dependencies `yarn`
-- Install pods `cd ios && pod deintegrate && pod install && cd ..`
+- Install pods `yarn pods`
 
 ## Get access to news 
 
@@ -20,5 +20,7 @@ APP_KEY= your_app_key
 
 APP_KEY value is different per build variant. To create your own, you need to go throw this documentation: https://developer.nytimes.com/get-started
 
+## To run test
+To run tests: `yarn test`
 
 🎉

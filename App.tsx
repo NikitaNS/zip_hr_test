@@ -13,10 +13,6 @@ import {SafeAreaView} from 'react-native';
 
 import NewsScreen from './src/feature/News/screens/NewsScreen/NewsScreen';
 
-if (__DEV__) {
-  import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
-}
-
 const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>

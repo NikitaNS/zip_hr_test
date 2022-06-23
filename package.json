@@ -7,10 +7,11 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "pods": "cd ios && pod deintegrate && pod install && cd .."
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-async-storage/async-storage": "^1.17.6",
     "@react-native-community/netinfo": "^9.0.0",
     "axios": "^0.27.2",
     "dayjs": "^1.11.3",
@@ -25,6 +26,8 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/jest-native": "^4.0.5",
+    "@testing-library/react-native": "^9.1.0",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.67.3",
     "@types/react-test-renderer": "^17.0.1",
@@ -44,6 +47,15 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": [
+      "./__mocks__/Async-storage.js"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@react-native|react-native|react-native-config)/)"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",

@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react';
 import {fetchNews} from '../api/api';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const defaultValue = {
   news: [],
